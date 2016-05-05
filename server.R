@@ -31,7 +31,8 @@ shinyServer(function(input, output, session) {
     
     weatherData<- weatherData()
     
-    qplot(Dates, Rainfall, data = weatherData, geom = "bar", stat = "identity")
+    ggplot(data = weatherData(), aes(Dates, Rainfall)) + 
+      geom_bar(stat = "identity")
     
     })
   
